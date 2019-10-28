@@ -7,6 +7,10 @@ class Produto extends Model {
   user() {
     return this.belongsTo("App/Models/User");
   }
+
+  deposito() {
+    return this.belongsTo("App/Models/Deposito");
+  }
 }
 
 module.exports = Produto;

@@ -33,4 +33,6 @@ Route.group(() => {
   Route.resource("produtos", "ProdutoController").apiOnly();
 
   Route.resource("vendas", "VendaController").apiOnly();
+
+  Route.resource("deposito", "DepositoController").apiOnly();
 }).middleware(["auth"]);

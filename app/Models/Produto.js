@@ -4,10 +4,6 @@
 const Model = use("Model");
 
 class Produto extends Model {
-  user() {
-    return this.belongsTo("App/Models/User");
-  }
-
   deposito() {
     return this.belongsTo("App/Models/Deposito");
   }

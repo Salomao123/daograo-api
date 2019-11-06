@@ -7,13 +7,14 @@ class ProdutosSchema extends Schema {
   up() {
     this.create("produtos", table => {
       table.increments();
-      table.string("nome").notNullable();
+
       table
-        .integer("user_id")
+        .integer("deposito_id")
         .references("id")
-        .inTable("users")
+        .inTable("depositos")
         .notNullable();
 
+      table.string("nome").notNullable();
       table.string("categoria").notNullable();
       table.string("subcategoria").notNullable();
       table.integer("valor_unidade").notNullable();

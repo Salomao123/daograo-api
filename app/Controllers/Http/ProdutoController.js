@@ -5,7 +5,7 @@ const Produto = use("App/Models/Produto");
 class ProdutoController {
   async index({ request, response, view }) {
     const produtos = await Produto.query()
-      .with("user")
+      .with("deposito")
       .fetch();
 
     return produtos;
@@ -20,7 +20,7 @@ class ProdutoController {
       "unidade"
     ]);
 
-    const produtos = await Produto.create({ ...data, user_id: auth.user.id });
+    const produtos = await Produto.create({ ...data, deposito_id: 1 });
 
     return produtos;
   }

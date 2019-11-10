@@ -17,8 +17,9 @@ class ProdutosSchema extends Schema {
       table.string("nome").notNullable();
       table.string("categoria").notNullable();
       table.string("subcategoria").notNullable();
-      table.integer("valor_unidade").notNullable();
-      table.string("unidade").notNullable();
+      table.double("preco_produto").notNullable();
+      table.double("valor_unidade").notNullable();
+      table.string("descricao_unidade").notNullable();
       table.timestamps();
     });
   }

@@ -21,7 +21,7 @@ class DepositoController {
    */
   async index({ request, response, view }) {
     const depositos = await Deposito.query()
-    
+
       .with("produto")
       .fetch();
     return depositos;
@@ -47,7 +47,14 @@ class DepositoController {
    * @param {Response} ctx.response
    */
   async store({ request, response }) {
-    const data = request.only(["descricao", "endereco"]);
+    const data = request.only([
+      "nome",
+      "rua",
+      "numero",
+      "bairro",
+      "municipio",
+      "uf_estado"
+    ]);
 
     const depositos = await Deposito.create(data);
 

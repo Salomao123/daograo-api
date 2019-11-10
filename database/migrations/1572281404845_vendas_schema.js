@@ -10,7 +10,7 @@ class VendasSchema extends Schema {
       table.integer("user_id").notNullable();
       table.string("cliente").notNullable();
       table.string("descricao").notNullable();
-      table.double("preco").notNullable();
+      table.double("preco_venda").notNullable();
       table.timestamps();
     });
   }

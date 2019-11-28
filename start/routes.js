@@ -28,11 +28,9 @@ Route.post("authentication", "AuthController.store");
 
 //Grupo:
 Route.group(() => {
-  Route.resource("users", "UserController").apiOnly();
-
   Route.resource("produtos", "ProdutoController").apiOnly();
 
   Route.resource("vendas", "VendaController").apiOnly();
 
-  Route.resource("deposito", "DepositoController").apiOnly();
+  Route.resource("depositos", "DepositoController").apiOnly();
 }).middleware(["auth"]);

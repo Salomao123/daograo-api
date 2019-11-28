@@ -14,12 +14,13 @@ class ProdutosSchema extends Schema {
         .inTable("depositos")
         .notNullable();
 
-      table.string("nome").notNullable();
+      table.string("tipo_produto").notNullable();
+      table.string("codigo_barra").notNullable();
       table.string("categoria").notNullable();
       table.string("subcategoria").notNullable();
       table.double("preco_produto").notNullable();
       table.double("valor_unidade").notNullable();
-      table.string("descricao_unidade").notNullable();
+      table.string("unidade_medida").notNullable();
       table.timestamps();
     });
   }

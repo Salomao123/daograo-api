@@ -48,12 +48,12 @@ class DepositoController {
    */
   async store({ request, response }) {
     const data = request.only([
-      "nome",
-      "rua",
-      "numero",
-      "bairro",
-      "municipio",
-      "uf_estado"
+      "deposito_codigo",
+      "deposito_nome",
+      "deposito_cep",
+      "deposito_bairro",
+      "deposito_municipio",
+      "deposito_uf_estado"
     ]);
 
     const depositos = await Deposito.create(data);

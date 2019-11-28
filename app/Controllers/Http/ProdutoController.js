@@ -13,13 +13,14 @@ class ProdutoController {
 
   async store({ request, auth }) {
     const data = request.only([
-      "nome",
       "deposito_id",
+      "tipo_produto",
+      "codigo_barra",
       "categoria",
       "subcategoria",
       "preco_produto",
       "valor_unidade",
-      "descricao_unidade"
+      "unidade_medida"
     ]);
 
     const produtos = await Produto.create({ ...data });

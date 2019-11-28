@@ -7,12 +7,12 @@ class DepositoSchema extends Schema {
   up() {
     this.create("depositos", table => {
       table.increments();
-      table.string("nome");
-      table.string("rua").notNullable();
-      table.integer("numero").notNullable();
-      table.string("bairro").notNullable();
-      table.string("municipio").notNullable();
-      table.string("uf_estado").notNullable();
+      table.integer("deposito_codigo");
+      table.string("deposito_nome").notNullable();
+      table.integer("deposito_cep").notNullable();
+      table.string("deposito_bairro").notNullable();
+      table.string("deposito_municipio").notNullable();
+      table.string("deposito_uf_estado").notNullable();
       table.timestamps();
     });
   }

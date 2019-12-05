@@ -17,6 +17,18 @@ class UserController {
       return response.send({ error: { mesage: err.message } });
     }
   }
+
+  async getUser({ request, response }) {
+    try {
+      const { email } = request.params;
+
+      const users = await User.findByOrFail("email", email);
+
+      return users;
+    } catch (err) {
+      return response.send({ error: { message: err.message } });
+    }
+  }
 }
 
 module.exports = UserController;

@@ -7,7 +7,6 @@ class DepositoSchema extends Schema {
   up() {
     this.create("depositos", table => {
       table.increments();
-      table.integer("deposito_codigo");
       table.string("deposito_nome").notNullable();
       table.integer("deposito_cep").notNullable();
       table.string("deposito_bairro").notNullable();

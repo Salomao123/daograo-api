@@ -8,7 +8,7 @@ class UserSchema extends Schema {
     this.create("users", table => {
       table.increments();
       table
-        .string("username", 80)
+        .string("nome_completo", 80)
         .notNullable()
         .unique();
       table
@@ -16,6 +16,13 @@ class UserSchema extends Schema {
         .notNullable()
         .unique();
       table.string("password", 60).notNullable();
+
+      table
+        .integer("cargo_id")
+        .references("id")
+        .inTable("cargos")
+        .notNullable();
+
       table.timestamps();
     });
   }

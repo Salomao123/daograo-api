@@ -38,6 +38,10 @@ class User extends Model {
   produto() {
     return this.hasMany("App/Models/Produto");
   }
+
+  cargo() {
+    return this.belongsTo("App/Models/Cargo");
+  }
 }
 
 module.exports = User;

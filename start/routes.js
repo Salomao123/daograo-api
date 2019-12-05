@@ -22,15 +22,27 @@ Route.get("/", () => {
 
 //users: routes
 Route.post("users", "UserController.store");
+Route.resource("cargos", "CargoController").apiOnly();
 
 //Rota de login
 Route.post("authentication", "AuthController.store");
 
+Route.post("cargos", "CargoController.store");
+
 //Grupo:
 Route.group(() => {
+  Route.get("users/:id", "UserController.show");
+  Route.get("users", "UserController.index");
+
+  Route.get("getUser/:email", "UserController.getUser");
+
   Route.resource("produtos", "ProdutoController").apiOnly();
 
   Route.resource("vendas", "VendaController").apiOnly();
 
   Route.resource("depositos", "DepositoController").apiOnly();
+
+  Route.resource("vendedores", "VendedoreController").apiOnly();
+
+  Route.resource("vendas", "VendasController").apiOnly();
 }).middleware(["auth"]);

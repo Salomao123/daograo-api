@@ -31,6 +31,8 @@ Route.post("cargos", "CargoController.store");
 
 //Grupo:
 Route.group(() => {
+  Route.resource("categorias", "CategoriaController").apiOnly();
+
   Route.get("users/:id", "UserController.show");
   Route.get("users", "UserController.index");
 

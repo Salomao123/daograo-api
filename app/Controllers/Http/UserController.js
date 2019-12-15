@@ -10,7 +10,12 @@ class UserController {
 
   async store({ request, response }) {
     try {
-      const data = request.only(["username", "email", "password"]);
+      const data = request.only([
+        "nome_completo",
+        "email",
+        "password",
+        "cargo_id"
+      ]);
       const users = await User.create(data);
       return users;
     } catch (err) {

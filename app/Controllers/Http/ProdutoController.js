@@ -14,9 +14,9 @@ class ProdutoController {
   async store({ request, auth }) {
     const data = request.only([
       "deposito_id",
+      "categoria_id",
       "tipo_produto",
       "codigo_barra",
-      "categoria",
       "subcategoria",
       "preco_produto",
       "valor_unidade",

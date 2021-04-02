@@ -9,15 +9,17 @@ const PROD_MYSQL_DB = new URL(Env.get("CLEARDB_DATABASE_URL"));
 module.exports = {
   connection: Env.get("DB_CONNECTION", "sqlite"),
 
-  sqlite: {
-    client: "sqlite3",
+  pg: {
+    client: 'pg',
     connection: {
-      filename: Helpers.databasePath(
-        `${Env.get("DB_DATABASE", "adonis")}.sqlite`
-      )
+      host: Env.get('DB_HOST', 'localhost'),
+      port: Env.get('DB_PORT', ''),
+      user: Env.get('DB_USER', 'root'),
+      password: Env.get('DB_PASSWORD', ''),
+      database: Env.get('DB_DATABASE', 'adonis')
     },
     useNullAsDefault: true,
-    debug: Env.get("DB_DEBUG", false)
+    debug: Env.get('DB_DEBUG', false)
   },
 
   mysql: {
